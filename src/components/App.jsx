@@ -1,3 +1,4 @@
+
 import React ,{Component} from "react";
 import ContactForm from "./form";
 
@@ -8,21 +9,22 @@ class App extends Component {
     contacts: []
   }
 
-  formSubmitHandler = data => {
+  formSubmitHandler = (data) => {
     console.log(data)
     this.setState(prevState =>{
       return {
-      contacts: [...prevState.contacts,{...data}]
+        contacts: [...prevState.contacts, {...data},],
     }
 
     })
   }
 
+ 
   
   render() {
     return (
       <div>
-        <ContactForm onSubmit ={this.formSubmitHandler}  />
+        <ContactForm onSubmit={this.formSubmitHandler} />
       </div>
     );
   }

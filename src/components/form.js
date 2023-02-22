@@ -1,4 +1,7 @@
+
 import React, { Component } from "react";
+
+
 
 class ContactForm extends Component {
     state ={
@@ -9,21 +12,23 @@ class ContactForm extends Component {
   handleChacge = e => {
         const {name, value} = e.currentTarget;
         this.setState({[name]: value})
+        
   }
-  
+
   formSubmit = e => {
     e.preventDefault();
+   
     this.props.onSubmit(this.state);
     this.reset()
   }
   
-    reset = () =>{
+    reset = () => {
     this.setState({name: '', number: ''})
 }
 
 render(){
 return (
-    <form onSubmit={this.formSubmit}>
+    <form onSubmit={this.formSubmit} >
           <label>Name
              <input
           type="text"
