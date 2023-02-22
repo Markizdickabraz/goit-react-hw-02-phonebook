@@ -1,34 +1,28 @@
 import React ,{Component} from "react";
+import ContactForm from "./form";
 
 
+class App extends Component {
 
-class App extends Component{
-
-state = {
-  contacts: [],
-  name: ''
-}
-
-  addTocontacts(e) {
-    e.preventDefault();
-    
+  state = {
+    contacts: []
   }
+
+  formSubmitHandler = data => {
+    console.log(data)
+    this.setState(prevState =>{
+      return {
+      contacts: [...prevState.contacts,{...data}]
+    }
+
+    })
+  }
+
   
   render() {
     return (
       <div>
-        <form onSubmit={this.addTocontacts}>
-          <label>Name
-             <input
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-          />
-          </label>
-          <button type='submit'>Add contact</button>
-        </form>
+        <ContactForm onSubmit ={this.formSubmitHandler}  />
       </div>
     );
   }
