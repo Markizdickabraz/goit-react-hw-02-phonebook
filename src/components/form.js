@@ -11,15 +11,23 @@ class ContactForm extends Component {
 
   handleChacge = e => {
         const {name, value} = e.currentTarget;
-        this.setState({[name]: value})
-        
+      this.setState({ [name]: value })
+
+
   }
 
-  formSubmit = e => {
-    e.preventDefault();
-   
-    this.props.onSubmit(this.state);
-    this.reset()
+    formSubmit = e => {
+        e.preventDefault();
+        // console.dir(e.currentTarget)
+        
+            this.props.onSubmit(this.state);
+            this.reset()
+        
+        // if (this.state.name) {
+        //     alert('pizda')
+        //     this.reset()
+        //     return;
+        // }
   }
   
     reset = () => {
