@@ -33,10 +33,10 @@ class App extends Component {
   
   
   render() {
-    const { contacts, filter } = this.state;
+    const {filter } = this.state;
     
-    // const normalizedFilter = this.state.filter.toLowerCase();
-    // const filtredComponents = this.state.contacts.filter(contact => contact.text.toLowerCase().includes(normalizedFilter))
+    const normalizedFilter = this.state.filter.toLowerCase();
+    const filtredComponents = this.state.contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter))
 
     return (
       <div>
@@ -44,7 +44,7 @@ class App extends Component {
         <ContactForm onSubmit={this.formSubmitHandler} />
         <h2>Contacts</h2>
         <Filter value={filter} onChange={this.chengeFilter} />
-        <ContactList items={contacts} />
+        <ContactList items={filtredComponents} />
       </div>
     );
   }
