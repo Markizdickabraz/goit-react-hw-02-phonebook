@@ -1,15 +1,16 @@
 import React from "react"
+import {InputStyled, LabelStyled} from './FormStyled'
 
 const Filter = ({ value, onChange }) => (
 
-                <label>
+                <LabelStyled>
           Find contacts by name
-          <input
+    <InputStyled
             type='text'
             value={value}
             onChange = {onChange}
           />
-        </label>    
+        </LabelStyled>    
 )
 
 export default Filter;
