@@ -1,7 +1,7 @@
 import ListItem from "./listItem";
 
 
-export default function ContactList({ items, btnDeleteClick }) {
+export default function ContactList({ items, onDeleteClick }) {
 
     // console.log(stateContacts);
     // const deleteButtonClick = ({ stateContacts }) => {
@@ -13,7 +13,7 @@ export default function ContactList({ items, btnDeleteClick }) {
             {items.map(item => 
             (
                 <ListItem key={item.name}
-                    name={item.name} number={item.number} deleteClick = {btnDeleteClick} ></ListItem>
+                    name={item.name} number={item.number} deleteClick = {onDeleteClick} ></ListItem>
             )
                 )}
         </ul>
