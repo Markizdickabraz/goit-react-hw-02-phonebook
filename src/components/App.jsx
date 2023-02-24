@@ -34,7 +34,7 @@ deleteClick = (name) => {
 }
 
   formSubmitHandler = (data) => {
-    this.alert(data.name)
+    this.alert(data)
     this.setState(prevState => {
         return {
         contacts: [...prevState.contacts, {...data},],
