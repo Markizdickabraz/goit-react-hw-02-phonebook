@@ -1,8 +1,6 @@
 
 import React, { Component } from "react";
 
-
-
 class ContactForm extends Component {
     state ={
         name: '',
@@ -12,14 +10,9 @@ class ContactForm extends Component {
   handleChacge = e => {
       const {name, value} = e.currentTarget;
       this.setState({ [name]: value })
-    //   if (this.state.name === e.currentTarget) {
-    //     console.log(e.currentTarget[0].value);
-    //     console.log(this.state.name);
-    //     alert('aaaaa')
-    //   return;
-    // }
-    
   }
+
+ 
 
   formSubmit = e => {
       e.preventDefault();
@@ -35,7 +28,7 @@ class ContactForm extends Component {
 
 render(){
 return (
-    <form onSubmit={this.formSubmit} >
+  <form onSubmit={this.formSubmit}>
           <label>Name
              <input
               type="text"
@@ -59,7 +52,7 @@ return (
                 required
 />
           </label>
-          <button type='submit'>Add contact</button>
+    <button type='submit' >Add contact</button>
         </form>
 )
     
