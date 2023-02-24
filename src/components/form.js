@@ -10,25 +10,24 @@ class ContactForm extends Component {
     }
 
   handleChacge = e => {
-        const {name, value} = e.currentTarget;
+      const {name, value} = e.currentTarget;
       this.setState({ [name]: value })
-
-
+    //   if (this.state.name === e.currentTarget) {
+    //     console.log(e.currentTarget[0].value);
+    //     console.log(this.state.name);
+    //     alert('aaaaa')
+    //   return;
+    // }
+    
   }
 
-    formSubmit = e => {
-        e.preventDefault();
-        // console.dir(e.currentTarget)
-        
-            this.props.onSubmit(this.state);
-            this.reset()
-        
-        // if (this.state.name) {
-        //     alert('pizda')
-        //     this.reset()
-        //     return;
-        // }
-  }
+  formSubmit = e => {
+      e.preventDefault();
+      this.props.onSubmit(this.state);
+      this.reset();
+    }
+  
+ 
   
     reset = () => {
     this.setState({name: '', number: ''})
@@ -39,7 +38,7 @@ return (
     <form onSubmit={this.formSubmit} >
           <label>Name
              <input
-          type="text"
+              type="text"
               name="name"
               value={this.state.name}
               onChange = {this.handleChacge}

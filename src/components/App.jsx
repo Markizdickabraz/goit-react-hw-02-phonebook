@@ -15,10 +15,11 @@ class App extends Component {
   ],
     filter: ''
   }
+  
+
 
   formSubmitHandler = (data) => {
-    console.log(data)
-    this.setState(prevState =>{
+      this.setState(prevState =>{
       return {
         contacts: [...prevState.contacts, {...data},],
     }
@@ -30,7 +31,22 @@ class App extends Component {
      this.setState({ filter: e.currentTarget.value })
   }
  
-  
+  //   deleteButtonClick = e  => {
+  //   console.log(e)
+  //   this.setState(prevState => {
+  //   return {
+  //       contacts: prevState.contacts.filter(contacts => contacts.name === e)
+  //     }
+  //   })
+  // }
+
+  deleteClick = (e) => {
+    console.dir(e.currentTarget.id)
+    console.log(this.state.contacts)
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.name !== e)
+    }))
+  }
   
   render() {
     const {filter } = this.state;
@@ -44,7 +60,7 @@ class App extends Component {
         <ContactForm onSubmit={this.formSubmitHandler} />
         <h2>Contacts</h2>
         <Filter value={filter} onChange={this.chengeFilter} />
-        <ContactList items={filtredComponents} />
+        <ContactList items={filtredComponents} btnDeleteClick={this.deleteClick} />
       </div>
     );
   }
