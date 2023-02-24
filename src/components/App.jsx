@@ -7,7 +7,7 @@ import Filter from "./filter";
 class App extends Component {
 
   state = {
-    contacts: [
+   contacts: [
     {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
     {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
     {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
@@ -17,30 +17,29 @@ class App extends Component {
   }
   
 deleteClick = (name) => {
-    this.setState(prevState => ({
+      this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.name !== name),
     }
     ));
   }
 
-  alert = (data) => {
-    console.log(data)
-    this.setState(prevState => {
-      if (prevState.contacts.filter(contact => contact.name === data.name)) {
-             return alert(data.name);
-           }
-    }
-  )
-}
+
 
   formSubmitHandler = (data) => {
-    this.alert(data)
-    this.setState(prevState => {
+    const filterdContacts = this.state.contacts.map(contact => contact.name);
+    const someName = filterdContacts.some(name => name === data.name)
+    console.log(someName)
+    if (someName) {
+      return alert('aaaaa');
+    } 
+    else {
+          this.setState(prevState => {
         return {
         contacts: [...prevState.contacts, {...data},],
       }
 }
       )
+}
   }
 
   chengeFilter = e => {

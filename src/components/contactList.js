@@ -1,8 +1,8 @@
 import ListItem from "./listItem";
-
+// import { nanoid } from "nanoid";
 
 export default function ContactList({ items, onDeleteClick }) {
-
+    // const id = nanoid();
     return (
         <ul>
             {items.map(item => 
