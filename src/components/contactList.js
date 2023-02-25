@@ -1,5 +1,7 @@
 import ListItem from "./listItem";
 // import { nanoid } from "nanoid";
+import PropTypes, { any } from 'prop-types';
+
 
 export default function ContactList({ items, onDeleteClick }) {
     // const id = nanoid();
@@ -14,3 +16,8 @@ export default function ContactList({ items, onDeleteClick }) {
         </ul>
     )
 }
+
+ListItem.PropTypes = {
+    item: PropTypes.objectOf(any),
+    onDeleteClick: PropTypes.func
+} 

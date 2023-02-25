@@ -1,5 +1,8 @@
+
 import React from "react"
-import {InputStyled, LabelStyled} from './FormStyled'
+import PropTypes from 'prop-types';
+import { InputStyled, LabelStyled } from './FormStyled'
+
 
 const Filter = ({ value, onChange }) => (
 
@@ -14,3 +17,9 @@ const Filter = ({ value, onChange }) => (
 )
 
 export default Filter;
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func
+
+}
