@@ -1,4 +1,4 @@
-import ListItem from "./listItem";
+import ListItem from "../listItem/listItem";
 // import { nanoid } from "nanoid";
 import PropTypes, { any } from 'prop-types';
 
