@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { FormBtn, FormStyled, InputStyled, LabelStyled } from "./FormStyled";
 
@@ -16,6 +15,7 @@ class ContactForm extends Component {
  
 
   formSubmit = e => {
+
       e.preventDefault();
       this.props.onSubmit(this.state);
       this.reset();
@@ -53,7 +53,7 @@ return (
                 required
 />
           </LabelStyled>
-    <FormBtn type='submit'>Add contact</FormBtn>
+    <FormBtn disabled={!this.state.name || !this.state.number} type='submit'>Add contact</FormBtn>
         </FormStyled>
 )
     
