@@ -24,9 +24,8 @@ deleteClick = (name) => {
   formSubmitHandler = (data) => {
     const filterdContacts = this.state.contacts.map(contact => contact.name);
     const someName = filterdContacts.some(name => name === data.name)
-    console.log(someName)
     if (someName) {
-      return alert('aaaaa');
+      return alert(`${data.name}, is already in contacts`);
     } 
     else {
           this.setState(prevState => {
