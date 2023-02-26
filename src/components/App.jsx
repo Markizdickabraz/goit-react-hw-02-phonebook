@@ -54,7 +54,7 @@ deleteClick = (name) => {
         <ContactForm onSubmit={this.formSubmitHandler} />
         <h2>Contacts</h2>
         <Filter value={filter} onChange={this.chengeFilter} />
-        <ContactList items={filtredComponents} onDeleteClick={this.deleteClick} />
+        {filtredComponents.length > 0 &&  <ContactList items={filtredComponents} onDeleteClick={this.deleteClick} />}
       </div>
     );
   }

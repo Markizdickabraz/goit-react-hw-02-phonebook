@@ -6,8 +6,7 @@ import PropTypes from 'prop-types';
 export default function ContactList({ items, onDeleteClick }) {
     // const id = nanoid();
 
-    if (items.length) {
-        
+   
         return (
             <ul>
                 {items.map(item =>
@@ -19,7 +18,7 @@ export default function ContactList({ items, onDeleteClick }) {
             </ul>
         )
     }
-}
+
 
 ListItem.prototype = {
     item: PropTypes.objectOf(PropTypes.string),
